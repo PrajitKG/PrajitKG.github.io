@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="tailus ui html-vite and tailwindcss 3.1 boilerplate"
+    />
+</head>
+<body>
+    <section class="container">
+        <nav>
+            <div class="logo">pkg.</div>
+            <ul class="navItems">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- <div class="tab-nav-bar"></div>
+        <div class="tab-navigation">
+            <ul class="tab-menu">
+                <li class="tab-btn">Home</li>
+                <li class="tab-btn">About</li>
+                <li class="tab-btn">Skills</li>
+                <li class="tab-btn">Contact</li>
+            </ul>
+        </div> -->
+        </section>
+        
+
+        <section id="home" class="wrapper">
+            <div class="cols cols0">
+                <span class="topline">Hello, I'm Prajit</span>
+                <h1>and I'm a <span class="multiText"></span></h1>
+            </div>
+            <div class="cols cols1">
+                <div class="imgbox">
+                    <img src="" id="splash">
+                    <img src="images/my face with style combi jpg.jpg">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="main">
+                <img src="images/pkg.jpg" style="height: 410px;width: 300px;">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <h5>Developer & Designer</h5>
+                    <p>Hi! I am currently a year 2 at Republic Polytechnic
+                        and currently pursuing Diploma in Digital Design and Development.
+                        I aspire to be a UI/UX Designer 
+                        in the near future.</p>                   
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="skills-text">
+                <h2>Skills</h2>
+            </div>
+            <div class="center">
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'Tab1')">Development</button>
+                    <button class="tablinks" onclick="openTab(event, 'Tab2')">Design</button>
+                  </div>
+                  
+                  <!-- <div id="Tab1" class="tabcontent">
+                    <li><span>UI/UX</span><br>Designing web/app interface</li>
+                    <li><span>Web Development</span><br>Building responsive websites</li>
+                    <li><span>Backend Development</span><br>Working with databases and servers</li>
+                  </div> -->
+
+                  <div id="Tab1" class="tabcontent">
+                    <h3>Proficiency</h3>
+                    <div class="box">
+                        <p><span>HTML</span><span>85%</span></p>
+                        <div class="progress-box">
+                            <div class="progress html"></div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <p><span>SQL</span><span>80%</span></p>
+                        <div class="progress-box">
+                            <div class="progress sql"></div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <p><span>Python</span><span>83%</span></p>
+                        <div class="progress-box">
+                            <div class="progress python"></div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <p><span>Java</span><span>75%</span></p>
+                        <div class="progress-box">
+                            <div class="progress java"></div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div id="Tab2" class="tabcontent">
+                    <li><span>Graphic Design</span><br>Creating visual concepts</li>
+                    <li><span>Typography</span><br>Working with fonts and typefaces</li>
+                    <li><span>Color Theory</span><br>Understanding color palettes</li>
+                  </div>
+            </div>
+           
+              
+              <script>
+              function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+              }
+              </script>        
+              
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="portfolio-header">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="project-container">
+                <div class="project-box">
+                    <img src="images/moviewebsite.png" alt="Movie Website" style="height: 120px; width: 180px;">
+                    <br>
+                    <h4>Movie website</h4>
+                </div>
+                <div class="project-box">
+                    <img src="images/mobileportfolio.png" alt="Mobile Portfolio" style="height: 150px; width: 80px;">
+                    <br>
+                    <h4>Mobile portfolio</h4>
+                </div>
+                <div class="project-box">
+                    <img src="images/bankapp.png" alt="Mobile Portfolio" style="height: 150px; width: 80px;">
+                    <br>
+                    <h4>Mobile bank app</h4>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="contact" class="contact">
+            <div class="contact-form">
+                <h2>Contact Me</h2>
+                <p>Looking to contact me for work-related matters? You can drop me an email
+                    using the form below!
+                </p>
+                <form>
+                    <input type="" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="4" cols="50"></textarea>
+                    <input type="submit" name="" value="Submit" class="btn">
+                </form>
+            </div>
+        </section>
+
+        
+       <footer>
+        <ul class="social_icon">
+            <!-- <li><a href="https://twitter.com/KgPrajit"><ion-icon name="logo-twitter"></ion-icon></a></li> -->
+            <li><a href="https://www.linkedin.com/in/prajit-kg-96048b23b/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <!-- <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li> -->
+            <li><a href="https://github.com/PrajitKG"><ion-icon name="logo-github"></ion-icon></a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p>©Prajit2023</p>
+       </footer>
+       <script>
+         document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.navItems li a');
+        const footerLinks = document.querySelectorAll('footer .menu li a');
+    
+        navLinks.forEach(link => {
+            link.addEventListener('click', smoothScroll);
+        });
+    
+        footerLinks.forEach(link => {
+            link.addEventListener('click', smoothScroll);
+        });
+    
+        function smoothScroll(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetPosition = document.querySelector(targetId).offsetTop;
+    
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+       </script>
+      
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+        
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typingEffect = new Typed(".multiText",{strings: ["coder","gamer","designer"], loop: true, typeSpeed: 100, backSpeed: 80, backDelay: 1500})
+    </script>
+
+</body>
+</html>
