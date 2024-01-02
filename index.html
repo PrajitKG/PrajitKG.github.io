@@ -6,16 +6,240 @@
     <title>Portfolio</title>
     <link rel="stylesheet"  type="text/css" href="style.css">
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <meta
       name="description"
       content="tailus ui html-vite and tailwindcss 3.1 boilerplate"
     />
+    <style>
+
+.articles-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 20px;
+    }
+
+    .article {
+    flex: 0 0 calc(30% - 20px);
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: border 0.3s ease, transform 0.3s ease; /* Move transition properties here */
+    height: 300px;
+    
+}
+
+.article:hover {
+    border: 5px solid #7f00ff;
+    transform: scale(1.05);
+    transform-origin: center bottom; /* Adjust the transform-origin for uniform scaling */
+}
+
+
+    .article img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .article-content {
+        margin-bottom: 15px;
+    }
+
+    .article a {
+        display: block;
+        text-decoration: none;
+        color: blue;
+        font-weight: bold;
+    }
+        .menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #e9ecee;
+}
+
+.portfolio-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: #e9ecee;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #d3d8db;
+}
+
+.tab.active {
+    background-color: #7f00ff;
+    color: white;
+}
+
+
+        @media only screen and (max-width: 768px) {
+    
+            .logo {
+        margin-right: auto; /* Auto margin on the right to push the logo to the left */
+        margin-left: 10px; /* Add a left margin for spacing (adjust as needed) */
+    }
+
+    .full-width-image img {
+        max-width: 100%; /* Make the image responsive */
+    }
+
+    .articles-container {
+        justify-content: center; /* Center articles on smaller screens */
+    }
+
+    .article {
+        flex: 0 0 80%; /* Set the width of articles to 80% on smaller screens */
+        margin: 10px 0; /* Add space between articles on smaller screens */
+    }
+
+    .contact-form {
+        padding: 20px;
+        text-align: center; /* Center the content horizontally */
+    }
+
+    .contact-form p{
+        padding-left: 50px;
+    }
+
+    .contact-form form {
+        max-width: 100%; /* Make the form width 100% on smaller screens */
+        margin: 0 auto; /* Center the form horizontally */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%; /* Make the form inputs full width */
+        box-sizing: border-box; /* Include padding and border in the total width */
+        margin-bottom: 15px; /* Add space between form elements */
+    }
+
+    .main {
+        flex-direction: column-reverse; /* Change to column layout and reverse order on smaller screens */
+        align-items: center;
+    }
+
+    .about img {
+        margin-top: 20px; /* Adjust the margin for spacing */
+       
+    }
+
+    .about-text {
+        width: 100%; /* Adjust the width as needed */
+        text-align: left; /* Center-align the text */
+        margin-top: 20px; /* Adjust the margin for spacing */
+        margin-left: 50px;
+        margin-right: auto;
+    }
+    .about-text h2{
+        width: 100%; /* Adjust the width as needed */
+        text-align: center; /* Center-align the text */
+        margin-top: 20px; /* Adjust the margin for spacing */
+        margin-left: -50px;
+    }
+    .about-text h5{
+        width: 100%; /* Adjust the width as needed */
+        text-align: left; /* Center-align the text */
+        margin-top: 20px; /* Adjust the margin for spacing */
+        
+    }
+    .cols0 {
+        width: 90%;
+        margin-left: 0;
+    }
+    h1 {
+        font-size: 2em; /* Adjust the font size for smaller screens */
+    }
+
+    .topline {
+        font-size: 25px; /* Adjust the font size for smaller screens */
+    }
+
+    .navItems {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+    }
+
+    .navItems.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        z-index: 1500;
+    }
+
+    .skills .tab-header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Adjust the width as needed */
+    }
+
+    .skills .tab-header div {
+        margin-bottom: 10px;
+        margin-left: 0;
+        width: 100%; /* Adjust the width as needed */
+        text-align: center; /* Center-align the text */
+    }
+
+    .skills .tabs {
+        flex-direction: column;
+        width: 350px;
+        height: 415px;
+    }
+
+    .skills .tab-indicator {
+        display: none;
+    }
+
+    .skills .tab-body div {
+        display: none;
+    }
+
+    .skills .tab-body div.active {
+        display: block;
+    }
+}
+    </style>
 </head>
 <body>
     <section class="container">
         <nav>
-            <div class="logo">pkg.</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <img class="logo" src="logo.svg" alt="PKG" width="80" height="80">
             <ul class="navItems">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -24,30 +248,71 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <!-- <div class="tab-nav-bar"></div>
-        <div class="tab-navigation">
-            <ul class="tab-menu">
-                <li class="tab-btn">Home</li>
-                <li class="tab-btn">About</li>
-                <li class="tab-btn">Skills</li>
-                <li class="tab-btn">Contact</li>
-            </ul>
-        </div> -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuButton = document.getElementById('mobile-menu');
+    const navItems = document.querySelector('.navItems');
+
+    mobileMenuButton.addEventListener('click', function () {
+        navItems.classList.toggle('show');
+    });
+
+    // Close mobile menu when a menu item is clicked
+    const navLinks = document.querySelectorAll('.navItems li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            navItems.classList.remove('show');
+        });
+    });
+
+    // Close mobile menu when clicking outside the menu
+    document.addEventListener('click', function (event) {
+        const isClickInsideMobileMenu = navItems.contains(event.target);
+        const isClickOnMobileMenuButton = mobileMenuButton.contains(event.target);
+
+        if (!isClickInsideMobileMenu && !isClickOnMobileMenuButton) {
+            navItems.classList.remove('show');
+        }
+    });
+});
+
+        </script>
+         <script>
+            // Add an event listener to the SVG (assumed to have a "logo" class)
+            document.querySelector('.logo').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default anchor behavior
+    
+                // Scroll to the home section using smooth behavior
+                document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+            });
+        </script>
         </section>
         
 
-        <section id="home" class="wrapper">
-            <div class="cols cols0">
-                <span class="topline">Hello, I'm Prajit</span>
-                <h1>and I'm a <span class="multiText"></span></h1>
-            </div>
-            <div class="cols cols1">
-                <div class="imgbox">
-                    <img src="" id="splash">
-                    <img src="images/my face with style combi jpg.jpg">
+        <section id="home" class="home">
+        
+            <div class="wrapper">
+                <div class="cols cols0">
+                    <span class="topline">Hello, I'm Prajit</span>
+                    <h1>and I'm a <span class="multiText"></span></h1>
+                </div>
+             
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
         </section>
+        <br><br>
+        
 
         <section id="about" class="about">
             <div class="main">
@@ -63,101 +328,235 @@
             </div>
         </section>
 
-        <section id="skills" class="skills">
-            <div class="skills-text">
-                <h2>Skills</h2>
-            </div>
-            <div class="center">
-                <div class="tab">
-                    <button class="tablinks" onclick="openTab(event, 'Tab1')">Development</button>
-                    <button class="tablinks" onclick="openTab(event, 'Tab2')">Design</button>
-                  </div>
-                  
-                  <!-- <div id="Tab1" class="tabcontent">
-                    <li><span>UI/UX</span><br>Designing web/app interface</li>
-                    <li><span>Web Development</span><br>Building responsive websites</li>
-                    <li><span>Backend Development</span><br>Working with databases and servers</li>
-                  </div> -->
 
-                  <div id="Tab1" class="tabcontent">
-                    <h3>Proficiency</h3>
-                    <div class="box">
-                        <p><span>HTML</span><span>85%</span></p>
-                        <div class="progress-box">
-                            <div class="progress html"></div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <p><span>SQL</span><span>80%</span></p>
-                        <div class="progress-box">
-                            <div class="progress sql"></div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <p><span>Python</span><span>83%</span></p>
-                        <div class="progress-box">
-                            <div class="progress python"></div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <p><span>Java</span><span>75%</span></p>
-                        <div class="progress-box">
-                            <div class="progress java"></div>
-                        </div>
-                    </div>
-                  </div>
-                  
-                  <div id="Tab2" class="tabcontent">
-                    <li><span>Graphic Design</span><br>Creating visual concepts</li>
-                    <li><span>Typography</span><br>Working with fonts and typefaces</li>
-                    <li><span>Color Theory</span><br>Understanding color palettes</li>
-                  </div>
+       <!-- ... Previous HTML code ... -->
+
+<section id="skills" class="skills">
+    <div class="skills-text">
+        <h2>Skills</h2>
+    </div>
+    <br><br><br>
+    <div class="tabs">
+        <div class="tab-header">
+            <div id="tab1" class="active">Development</div>
+            <div id="tab2">Design</div>
+        </div>
+        <div class="tab-indicator"></div>
+        <div class="tab-body">
+            <div id="contentTab1" class="active">
+                <h1>Development</h1>
+                <br>
+                <img src="images/html.png" alt="html" style="height: 100px;width: 100px;">
+                <img src="images/css.png" alt="css" style="height: 100px;width: 100px;margin-left: 10px;">
+                <img src="images/sql.png" alt="sql" style="height: 100px;width: 100px;margin-left: 10px;">
+                <img src="images/php.png" alt="php" style="height: 100px;width: 100px;margin-left: 10px;">
+                <img src="images/java.png" alt="java" style="height: 100px;width: 100px;margin-right: 10px;margin-top: 10px;">
+                <img src="images/javascript.png" alt="javascript" style="height: 100px;width: 100px;margin-top: 10px;">
             </div>
-           
-              
-              <script>
-              function openTab(evt, tabName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                  tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                  tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(tabName).style.display = "block";
-                evt.currentTarget.className += " active";
-              }
-              </script>        
-              
-        </section>
+            <div id="contentTab2">
+                <h1>Design</h1>
+                <br>
+                <img src="images/photoshop.png" alt="adobe photoshop" style="height: 100px;width: 100px;">
+                <img src="images/illustrator.png" alt="adobe illustrator" style="height: 100px;width: 100px;">
+                <img src="images/xd.png" alt="adobe illustrator" style="height: 100px;width: 100px;">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabHeaders = document.querySelectorAll('.tab-header div');
+            const tabContents = document.querySelectorAll('.tab-body div');
+
+            tabHeaders.forEach((header, index) => {
+                header.addEventListener('click', function () {
+                    // Remove 'active' class from all tab headers and contents
+                    tabHeaders.forEach(h => h.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Add 'active' class to the clicked tab header and corresponding content
+                    header.classList.add('active');
+                    tabContents[index].classList.add('active');
+                });
+            });
+        });
+    </script>
+</section>
+
+
+
+        
 
         <section id="portfolio" class="portfolio">
             <div class="portfolio-header">
                 <h2>Portfolio</h2>
             </div>
-            <div class="project-container">
-                <div class="project-box">
-                    <img src="images/moviewebsite.png" alt="Movie Website" style="height: 120px; width: 180px;">
-                    <br>
-                    <h4>Movie website</h4>
+
+            <section class="portfolio-tabs">
+                <div class="tab" data-tab="all">All</div>
+                <div class="tab" data-tab="development">Development</div>
+                <div class="tab" data-tab="design">Design</div>
+            </section>
+            
+            <div class="articles-container">
+               
+                <div class="article" data-tags="development">
+                    <div class="article-content">
+                        <h4>Movie website</h4>
+                        <br>
+                        <img src="images/moviewebsite.png" alt="Movie Website" style="height: 120px; width: 180px;">
+                        <br><br>
+                        <button class="portfolio-button" data-bs-toggle="modal" data-bs-target="#Modal1">Details</button>
+                    </div>
                 </div>
-                <div class="project-box">
-                    <img src="images/mobileportfolio.png" alt="Mobile Portfolio" style="height: 150px; width: 80px;">
-                    <br>
-                    <h4>Mobile portfolio</h4>
+               
+                <div class="article" data-tags="design">
+                    <div class="article-content">
+                        <h4>Mobile portfolio</h4>
+                        <br>
+                        <img src="images/mobileportfolio.png" alt="Mobile Portfolio" style="height: 140px; width: 80px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
                 </div>
-                <div class="project-box">
-                    <img src="images/bankapp.png" alt="Mobile Portfolio" style="height: 150px; width: 80px;">
-                    <br>
-                    <h4>Mobile bank app</h4>
+                
+                <div class="article" data-tags="development">
+                    <div class="article-content">
+                        <h4>Mobile movie app</h4>
+                        <br>
+                        <img src="images/movieapp.png" alt="Movie App" style="height: 140px; width: 80px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="design">
+                    <div class="article-content">
+                        <h4>Minds app</h4>
+                        <br>
+                        <img src="images/mindsapp.png" alt="Minds App" style="height: 140px; width: 80px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="development">
+                    <div class="article-content">
+                        <h4>SOI Portal</h4>
+                        <br>
+                        <img src="images/SOIportal.png" alt="SOI Portal" style="height: 120px; width: 160px;margin-bottom: 10px;">
+                    </div>
+                    
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="design">
+                    <div class="article-content">
+                        <h4>Music event poster</h4>
+                        <br>
+                        <img src="images/poster.png" alt="Music event poster" style="height: 140px; width: 100px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="design">
+                    <div class="article-content">
+                        <h4>Drink advertisement</h4>
+                        <br>
+                        <img src="images/Final ad 2.jpg" alt="Drink advertisement" style="height: 140px; width: 100px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="design">
+                    <div class="article-content">
+                        <h4>Custom alphabet design</h4>
+                        <br>
+                        <img src="images/alphabet design.png" alt="Custom alphabet design" style="height: 140px; width: 160px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="design">
+                    <div class="article-content">
+                        <h4>Okinawa article</h4>
+                        <br>
+                        <img src="images/okinawa article.png" alt="Okinawa article" style="height: 140px; width: 160px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="development">
+                    <div class="article-content">
+                        <h4>Bill calculator</h4>
+                        <br>
+                        <img src="images/bill calculator.png" alt="Bill calculator" style="height: 140px; width: 80px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="development">
+                    <div class="article-content">
+                        <h4>Mobile bank app</h4>
+                        <br>
+                        <img src="images/bankapp.png" alt="Mobile bank app" style="height: 140px; width: 80px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
+                </div>
+
+                <div class="article" data-tags="development">
+                    <div class="article-content">
+                        <h4>Mobile song app</h4>
+                        <br>
+                        <img src="images/mobile song app.png" alt="Mobile song app" style="height: 140px; width: 80px;">
+                    </div>
+                    <button class="portfolio-button">Details</button>
                 </div>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const tabs = document.querySelectorAll('.tab');
+                    const articles = document.querySelectorAll('.article');
+            
+                    // Simulate a click on the "all" tab by default
+                    const allTab = document.querySelector('[data-tab="all"]');
+                    allTab.classList.add('active');
+            
+                    // Show all articles initially
+                    articles.forEach(article => {
+                        article.style.display = 'block';
+                    });
+            
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', function () {
+                            const selectedTab = this.getAttribute('data-tab');
+            
+                            // Remove 'active' class from all tabs
+                            tabs.forEach(t => t.classList.remove('active'));
+            
+                            // Add 'active' class to the clicked tab
+                            this.classList.add('active');
+            
+                            // Show or hide articles based on the selected tab
+                            articles.forEach(article => {
+                                const articleTags = article.getAttribute('data-tags').split(',');
+            
+                                if (selectedTab === 'all' || articleTags.includes(selectedTab)) {
+                                    article.style.display = 'block';
+                                } else {
+                                    article.style.display = 'none';
+                                }
+                            });
+                        });
+                    });
+                });
+            </script>
+            
+
+
+
         </section>
         
 
-        <section id="contact" class="contact">
+        <section id="contact">
             <div class="contact-form">
                 <h2>Contact Me</h2>
                 <p>Looking to contact me for work-related matters? You can drop me an email
@@ -165,12 +564,17 @@
                 </p>
                 <form>
                     <input type="" placeholder="Your Name" required>
+                    <br>
                     <input type="email" name="email" placeholder="E-mail" required>
+                    <br>
                     <textarea id="message" name="message" placeholder="Your Message" rows="4" cols="50"></textarea>
+                    <br>
                     <input type="submit" name="" value="Submit" class="btn">
+                    <br>
                 </form>
             </div>
         </section>
+   
 
         
        <footer>
@@ -187,8 +591,9 @@
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
         </ul>
-        <p>©Prajit2023</p>
+        <p>©PrajitKG</p>
        </footer>
+       
        <script>
          document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.navItems li a');
@@ -220,11 +625,10 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
-        
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        var typingEffect = new Typed(".multiText",{strings: ["coder","gamer","designer"], loop: true, typeSpeed: 100, backSpeed: 80, backDelay: 1500})
+        var typingEffect = new Typed(".multiText",{strings: ["developer","designer"], loop: true, typeSpeed: 60, backSpeed: 40, backDelay: 400})
     </script>
 
 </body>
