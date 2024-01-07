@@ -15,7 +15,7 @@
     font-family: 'poppins',sans-serif;
 }
 body{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     background-color: #191919 !important;
 }
 /* section.nav{
@@ -110,7 +110,7 @@ b{
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: linear-gradient(90deg, rgba(2,0,.6,1) 0%, #692ba6 35%, #7f00ff 100%);
 }
 .box div{

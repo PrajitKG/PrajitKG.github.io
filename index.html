@@ -175,37 +175,30 @@
 
             .main {
                 flex-direction: column-reverse;
-                /* Change to column layout and reverse order on smaller screens */
-                align-items: center;
+               
             }
 
-            .about img {
-                margin-top: 20px;
-                /* Adjust the margin for spacing */
-                margin-left:-20px;
+         
+            .about {
+    text-align: center; /* Center-align the content within the .about container */
+}
 
-            }
+.about img {
+    display: block;
+    margin: 20px auto 0; /* Adjust the top margin as needed */
+}
 
-            .about-text {
-                width: 100%;
-                /* Adjust the width as needed */
-                text-align: left;
-                /* Center-align the text */
-                margin-top: 20px;
-                 /* Adjust the margin for spacing */
-                 margin-left: 30px;
-                margin-right: auto;
-            }
+.about-text {
+    /* Adjust the width as needed */
+    margin-top: 20px;
+}
 
-            .about-text h2 {
-                width: 100%;
-                /* Adjust the width as needed */
-                text-align: center;
-                /* Center-align the text */
-                margin-top: 20px;
-                /* Adjust the margin for spacing */
-                margin-left:-60px;
-            }
+.about-text h2,
+.about-text h5 {
+    text-align: center; /* Center-align the text */
+    margin-top: 20px;
+}
+
 
    
 
@@ -246,6 +239,10 @@
                 z-index: 1500;
             }
 
+            .skills-text h2{
+                margin-bottom: 30px;
+            }
+
             .skills .tab-header {
                 flex-direction: column;
                 align-items: center;
@@ -283,7 +280,7 @@
 
         @media only screen and (min-width: 1068px) {
     #about {
-        margin-top: 850px; /* Adjust the larger margin for larger screens */
+        margin-top: 950px; /* Adjust the larger margin for larger screens */
     }
 }
     </style>
