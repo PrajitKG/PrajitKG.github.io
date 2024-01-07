@@ -15,7 +15,7 @@
     font-family: 'poppins',sans-serif;
 }
 body{
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     background-color: #191919 !important;
 }
 /* section.nav{
