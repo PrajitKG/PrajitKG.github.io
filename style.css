@@ -286,7 +286,7 @@ h3{
 .about{
     width: 100%;
     padding:20px 0px;
-    margin-top: 550px;
+    margin-top: 650px;
 }
 .about img{
     height:auto;
@@ -420,7 +420,7 @@ h3{
     padding: 10px;
     background: #f1eded;
     border-top: 1px solid #ddd;
-    height: calc(100% - 50px);
+    height: 500px;
     overflow: hidden;
   }
 
