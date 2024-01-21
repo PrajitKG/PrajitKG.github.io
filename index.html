@@ -423,20 +423,20 @@
                 <div id="contentTab1" class="active">
                     <h1>Development</h1>
                     <br>
-                    <img src="images/html.png" alt="html" style="height: 100px;width: 100px;">
-                    <img src="images/css.png" alt="css" style="height: 100px;width: 100px;margin-left: 10px;">
-                    <img src="images/sql.png" alt="sql" style="height: 100px;width: 100px;margin-left: 10px;">
-                    <img src="images/php.png" alt="php" style="height: 100px;width: 100px;margin-left: 10px;margin-top: 10px;">
+                    <img src="images/html.png" alt="html" style="height: 100px;width: 100px;" data-tippy-content="html">
+                    <img src="images/css.png" alt="css" style="height: 100px;width: 100px;margin-left: 10px;" data-tippy-content="css">
+                    <img src="images/sql.png" alt="sql" style="height: 100px;width: 100px;margin-left: 10px;" data-tippy-content="sql">
+                    <img src="images/php.png" alt="php" style="height: 100px;width: 100px;margin-left: 10px;margin-top: 10px;" data-tippy-content="php">
                     <img src="images/java.png" alt="java"
-                        style="height: 100px;width: 100px;margin-right: 10px;margin-top: 10px;">
+                        style="height: 100px;width: 100px;margin-right: 10px;margin-top: 10px;" data-tippy-content="java">
                     <img src="images/javascript.png" alt="javascript"
-                        style="height: 100px;width: 100px;margin-top: 10px;">
+                        style="height: 100px;width: 100px;margin-top: 10px;" data-tippy-content="javascript">
                     <img src="images/bootstrap.png" alt="bootstrap"
-                        style="height: 100px;width: 100px;margin-top: 25px;margin-left: 8px;">
+                        style="height: 100px;width: 100px;margin-top: 25px;margin-left: 8px;" data-tippy-content="bootstrap">
                     <img src="images/androidstudio.png" alt="android studio"
-                        style="height: 100px;width: 100px;margin-top: 10px;margin-left: 8px;">
+                        style="height: 100px;width: 100px;margin-top: 10px;margin-left: 8px;" data-tippy-content="androidstudio">
                     <img src="images/python.png" alt="python"
-                        style="height: 100px;width: 100px;margin-top: 10px;margin-left: 10px;">
+                        style="height: 100px;width: 100px;margin-top: 10px;margin-left: 10px;" data-tippy-content="python">
                 </div>
                 <div id="contentTab2">
                     <h1>Design</h1>
@@ -466,6 +466,20 @@
                 });
             });
         </script>
+       <script src="https://unpkg.com/@popperjs/core@2"></script>
+       <script src="https://unpkg.com/tippy.js@6"></script>
+       <script>
+           // Add JavaScript to initialize Tippy.js for tooltips
+           tippy('#contentTab1 img, #contentTab2 img', {
+               content(reference) {
+                   const lang = reference.getAttribute('data-tippy-content');
+                   return lang;
+               },
+               placement: 'top',
+               animation: 'shift-away',
+               theme: 'light-border',
+           });
+       </script>       
     </section>
 
 
